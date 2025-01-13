@@ -8,10 +8,15 @@ from streamlit_extras.badges import badge
 # Load Model SVM
 @st.cache_resource
 def load_model():
+
     with open("model/svm_sentiment_model.pkl", "rb") as model_file:
+
         model = pickle.load(model_file)
+
     with open("model/tfidf_vectorizer.pkl", "rb") as vec_file:
+
         vectorizer = pickle.load(vec_file)
+
     return model, vectorizer
 
 # Hasil load model diubah ke dalam bentuk Vector
